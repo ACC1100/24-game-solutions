@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/24solutions/static/js/main.d7811193.chunk.js",
+    "main.js.map": "/24solutions/static/js/main.d7811193.chunk.js.map",
+    "runtime-main.js": "/24solutions/static/js/runtime-main.46804c45.js",
+    "runtime-main.js.map": "/24solutions/static/js/runtime-main.46804c45.js.map",
+    "static/js/2.c167b46b.chunk.js": "/24solutions/static/js/2.c167b46b.chunk.js",
+    "static/js/2.c167b46b.chunk.js.map": "/24solutions/static/js/2.c167b46b.chunk.js.map",
+    "index.html": "/24solutions/index.html",
+    "static/js/2.c167b46b.chunk.js.LICENSE.txt": "/24solutions/static/js/2.c167b46b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46804c45.js",
+    "static/js/2.c167b46b.chunk.js",
+    "static/js/main.d7811193.chunk.js"
+  ]
+}
