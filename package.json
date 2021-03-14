@@ -42,5 +42,5 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
    },
-  "homepage": "http://ACC1100.github.io/24solutions"
+  "homepage": "http://ACC1100.github.io/24-game-solutions"
 }
