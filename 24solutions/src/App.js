@@ -120,17 +120,18 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
-        <HStack spacing="80vw" justify="center">
+        <HStack justify="center" pt="5px" spacing="5vw">
           <Text>24 Solutions</Text>
-          <ColorModeSwitcher justifySelf="flex-end" />
+          <ColorModeSwitcher/>
         </HStack>
 
       
-        <Grid minH="80vh" p={3}>
+        <Grid minH="80vh" minW="80vw" p={3}>
           <Center>
             <VStack spacing={8}>
-              <Input w="50vw" size="lg" id="inputField"
-              placeholder="Input numbers here, in the following format: 1 2 3 4" 
+              <Input size="lg" id="inputField"
+              // placeholder="Input numbers here, in the following format: 1 2 3 4" 
+              placeholder="E.g. 1 2 3 4" 
               onChange={(e) => {setInput(e.target.value)}}
               />
 
