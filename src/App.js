@@ -19,11 +19,9 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  TableCaption,
 } from "@chakra-ui/react"
 
 function App() {
@@ -9890,23 +9888,29 @@ function App() {
   const [solution,setSolution]=useState([]);
   function findSolutions() {
     var inputString = input;
-    if (inputString.length == 0) {
+    if (inputString.length === 0) {
       return
     }
 
-    var inputArray = inputString.trim().split(" ");
-    inputArray = inputArray.sort().slice(-4); // take last 4 items, incase multiple spaces present
+    var inputArray = inputString.trim().split(/[ ,]/); // splits space and comma
+    inputArray = inputArray.filter(i => ![" ", ",", ""].includes(i)) // filters above
+    
+    if (inputArray.length !== 4) {
+        inputArray = []
+    }
+
     inputArray = inputArray.map(Number).sort((a, b) => a - b).map(String); // stupid javascript sort needs this for numbers;
     inputString = inputArray.join(" ");
 
     for (var i=0;i<data.length;i++) {
-      if (data[i].combination == inputString){
+      if (data[i].combination === inputString){
         setSolution(data[i].solutions);
         return
       }
     }
     setSolution([]);
   }
+
   function displaySolutions(solution) {
     var solutionItems = [];
     
@@ -9918,14 +9922,13 @@ function App() {
           </Tr>
         )
       }
-    } else if (input != "") {
+    } else if (input !== "") {
       solutionItems.push(
         <Tr key="none">
           <Td>No solution</Td>
         </Tr>
       )
     }
-
 
     return (
       <Table variant="simple">
@@ -9955,13 +9958,11 @@ function App() {
           <Text>24 Solutions</Text>
           <ColorModeSwitcher/>
         </HStack>
-
       
         <Grid minH="80vh" minW="80vw" p={3}>
           <Center>
             <VStack spacing={8}>
               <Input size="lg" id="inputField"
-              // placeholder="Input numbers here, in the following format: 1 2 3 4" 
               placeholder="E.g. 1 2 3 4" 
               onChange={(e) => {setInput(e.target.value)}}
               />
